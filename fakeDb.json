@@ -1,0 +1,63 @@
+{
+    "posts": [
+      {
+        "id": 1,
+        "name": "Moto z2 play",
+        "image": "https://a-static.mlcdn.com.br/618x463/smartphone-motorola-moto-z2-play-dual-chip-android-7-0-tela-5-5-octa-core-64gb-wi-fi-4g-camera-12mp-dourado/johnnybravoimports/9218997555/2f20fbca14148381dc9533df995e7fee.jpg",
+        "price": {
+          "elite": "R$50,00",
+          "mega": "R$90,00",
+          "kings": "R$70,00",
+          "fabio": "R$70,00"
+        }
+        
+      },
+      {
+        "id": 2,
+        "name": "Moto z3 play",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_792849-MLA32800120946_112019-O.jpg",
+        "price": {
+          "elite": "R$50,00",
+          "mega": "R$90,00",
+          "kings": "R$70,00",
+          "fabio": "R$70,00"
+        }
+      }
+      ,
+      {
+        "id": 3,
+        "name": "Moto z3 play",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_792849-MLA32800120946_112019-O.jpg",
+        "price": {
+          "elite": "R$50,00",
+          "mega": "R$90,00",
+          "kings": "R$70,00",
+          "fabio": "R$70,00"
+        }
+      }
+      ,
+      {
+        "id": 4,
+        "name": "Moto z3 play",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_792849-MLA32800120946_112019-O.jpg",
+        "price": {
+          "elite": "R$50,00",
+          "mega": "R$90,00",
+          "kings": "R$70,00",
+          "fabio": "R$70,00"
+        }
+      },
+      
+      {
+        "id": 5,
+        "name": "Moto z3 play",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_792849-MLA32800120946_112019-O.jpg",
+        "price": {
+          "elite": "R$50,00",
+          "mega": "R$90,00",
+          "kings": "R$70,00",
+          "fabio": "R$70,00"
+        }
+      }
+    ]
+  }

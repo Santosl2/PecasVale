@@ -1,9 +1,9 @@
 <template>
-  <div>
-      <navbar-global/>
+  <div id="app">
+      <navbar-global style="margin-bottom: 20px"/>
 
     <div
-      class="container"
+      class="container is-max-widescreen"
       style="display: flex; justify-content: center; align-itens: Center"
     >
       <form class="box" style="width: 750px">
@@ -30,10 +30,17 @@
         <small>Para obter um acesso, entre em contato</small>
       </form>
     </div>
+  
+    <footer-global/>
   </div>
 </template>
 
 <script>
 export default {};
 </script>
+
+<style scoped>
+body {
+}
+</style>
 
