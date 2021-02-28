@@ -1,4 +1,4 @@
 import Vue from 'vue'
-import Header from '../components/Others/Header.vue'
 
-Vue.component('navbar-global', Header)
+Vue.component('navbar-global', () => import('../components/Others/Header.vue'))
+Vue.component('user-menu', () => import('../components/User/Menu.vue'))

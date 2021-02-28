@@ -7,13 +7,31 @@ Vue.use(VueRouter)
 const routes = [
     {
         path: '/',
-        name: 'Home',
-        component: () => import('../components/Home.vue'),
+        name: 'Index',
+        component: () => import('../components/Index.vue'),
 
         meta: {
             'title': config.siteName + ': Inicio'
         }
-    }
+    },
+    {
+      path: '/home',
+      name: 'Home',
+      component: () => import('../components/Home.vue'),
+
+      meta: {
+          'title': config.siteName + ': Visualizando peças'
+      }
+  },
+    {
+      path: '/main',
+      name: 'Main',
+      component: () => import('../components/Main.vue'),
+
+      meta: {
+          'title': config.siteName + ': Todas as peças'
+      }
+  }
     
 ]
 
