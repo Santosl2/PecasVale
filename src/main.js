@@ -3,11 +3,17 @@ import App from './App.vue'
 import router from './routes/index'
 import Buefy from 'buefy'
 import store from './store/index'
-
-import 'buefy/dist/buefy.css'
+import axios from 'axios'
+import { apiUrl } from '../config.json';
 
 import './globalComponents/globalComponents.js'
+import 'buefy/dist/buefy.css'
 
+const api = axios.create({
+  baseURL: apiUrl 
+});
+
+Vue.prototype.$http = api; 
 
 Vue.use(Buefy)
 Vue.config.productionTip = false

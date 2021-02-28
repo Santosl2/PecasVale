@@ -1,5 +1,6 @@
 <template>
   <div>
+    
     <section v-if="typeof objects !== undefined && objects.length > 0">
       <div
         class="object"
@@ -7,6 +8,7 @@
         @click="showModal(object)"
         :key="object.id"
       >
+
         <div class="card">
           <div class="card-image">
             <figure class="image is-4by3">
@@ -23,24 +25,24 @@
             <div class="content">
               <span
                 v-if="
-                  typeof object.price !== undefined &&
-                  Object.keys(object.price).length > 0
+                  typeof object.prices !== undefined &&
+                  Object.keys(object.prices).length > 0
                 "
               >
                 <b-button
                   size="is-small"
                   style="margin: 5px; text-transform: capitalize"
-                  v-for="(price, local, index) in object.price"
+                  v-for="(result, index) in object.prices"
                   v-bind:class="customClass(index)"
                   :key="index"
-                  >{{ local }} - {{ price }}</b-button
+                  >{{ result.name }} - R${{ result.value }} </b-button
                 >
               </span>
               <br />
-              <time datetime="2016-1-1"> <b-icon
-                icon="clock"
-                size="is-small">
-            </b-icon>11:09 PM - 1 Jan 2016</time>
+              <time datetime="2016-1-1">
+                <b-icon icon="clock" size="is-small"> </b-icon> 11:09 PM - 1 Jan
+                2016</time
+              >
             </div>
           </div>
         </div>
@@ -48,11 +50,23 @@
 
       <Modal v-bind:data="modalData" />
     </section>
+    <section  style="margin: 10px" v-else>
+
+        <b-message title="Oops!" type="is-info" has-icon aria-close-label="Fechar alerta.">
+            Oops, parece que tem algo errado aqui. O nosso sistema não conseguiu encontrar nenhum resultado.
+            <br/>
+            Se o problema persistir, entre em contato.
+        </b-message>
+
+  <br/>
+      
+    </section>
+
+    <footer-global/>
   </div>
 </template>
 
 <script>
-import fakeDb from "../../../fakeDb.json";
 import Modal from "./Modal.vue";
 export default {
   name: "ListObjects",
@@ -63,18 +77,22 @@ export default {
 
   data: () => ({
     objects: [],
-    modalVisible: false,
     modalData: [],
   }),
   methods: {
     showModal(e) {
       this.modalData = e;
-      this.modalVisible = true;
 
       this.$emit("showModal", true);
     },
     loadObjects() {
-      this.objects = fakeDb.posts;
+      this.$http
+        .get("pecas/index", {
+          withCredentials: false,
+        })
+        .then((response) => {
+          this.objects = response.data;
+        });
     },
 
     customClass(e) {
@@ -92,7 +110,7 @@ export default {
     },
   },
 
-  mounted() {
+  created() {
     this.loadObjects();
   },
 };
@@ -130,5 +148,26 @@ export default {
   background-size: cover;
   border-radius: 5px;
   background-position: center;
+}
+
+@media only screen and (max-width: 800px) {
+  .object {
+    display: block;
+    width: 98%;
+  }
+}
+@media only screen and (min-width: 800px) and (max-width: 1200px) {
+  .object {
+    width: 300px;
+  }
+  .container {
+    margin: 0 auto;
+  }
+  section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }
 </style>

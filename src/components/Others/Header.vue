@@ -12,13 +12,10 @@
       <b-navbar-item tag="router-link" :to="{ path: '/' }">
         Inicio
       </b-navbar-item>
-      <b-navbar-item tag="router-link" :to="{ path: '/main' }">
-        MAin
-      </b-navbar-item>
 
       <b-navbar-dropdown label="Sobre">
-        <b-navbar-item href="#"> Sobre </b-navbar-item>
-        <b-navbar-item href="#"> Contact </b-navbar-item>
+        <b-navbar-item tag="router-link" :to="{path: '/about'}"> Contato </b-navbar-item>
+        <b-navbar-item href="#"> Como conseguir acesso </b-navbar-item>
       </b-navbar-dropdown>
     </template>
 
@@ -34,13 +31,17 @@
         </b-input>
       </b-field>
     </template>
+
   </b-navbar>
+
+  
 </template>
 
 <script>
 export default {
-  name: "Navbar",
-  props: {
+  name: "Navbar", 
+ 
+    props: {
     isLogged: {
       type: Boolean,
       default: false,

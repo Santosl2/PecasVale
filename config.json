@@ -1,4 +1,4 @@
 {
     "siteName": "Pecas Vale",
-    "apiUrl": ""
+    "apiUrl": "http://localhost/apiPecas/"
 }
